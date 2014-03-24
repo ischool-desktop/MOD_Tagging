@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Customization.Tagging</name>
+    </assembly>
+    <members>
+        <member name="T:Customization.Tagging.Cache">
+            <summary>
+            還沒寫好...
+            </summary>
+        </member>
+        <member name="T:Customization.Tagging.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Customization.Tagging.Program.Main">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Customization.Tagging.StatusItem">
+            <summary>
+            代表學生狀態的內部代碼與文字。
+            </summary>
+        </member>
+        <member name="M:Customization.Tagging.StatusItem.op_Equality(Customization.Tagging.StatusItem,Customization.Tagging.StatusItem)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Customization.Tagging.StatusItem.op_Inequality(Customization.Tagging.StatusItem,Customization.Tagging.StatusItem)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Customization.Tagging.StatusItem.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Customization.Tagging.StatusItem.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Customization.Tagging.StatusItem.Status">
+            <summary>
+            代碼。
+            </summary>
+        </member>
+        <member name="P:Customization.Tagging.StatusItem.Text">
+            <summary>
+            顯示文字。
+            </summary>
+        </member>
+        <member name="T:Customization.Tagging.GetStudentStatusList">
+            <summary>
+            提供「學生狀態」清單的自定機會。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Customization.Tagging.SystemTag">
+            <summary>
+            提供定義 SystemTag 的 API。
+            </summary>
+        </member>
+        <member name="M:Customization.Tagging.SystemTag.Define(System.String,System.String,System.Drawing.Color)">
+            <summary>
+            定義系統類別，如果系統中不存在該類別，則會自動建立。
+            </summary>
+            <param name="catalog">類別分類，例：Student、Class、Teacher、Course</param>
+            <param name="tagFullName">類別全名，例：一般生、輔導:輔導主任</param>
+            <param name="color">類別顏色。</param>
+        </member>
+        <member name="M:Customization.Tagging.SystemTag.Define(System.String,System.String,System.Drawing.Color,System.String,System.String,System.String)">
+            <summary>
+            定義系統類別，如果系統中不存在該類別，則會自動建立。
+            </summary>
+            <param name="catalog">類別分類，例：Student、Class、Teacher、Course</param>
+            <param name="tagFullName">類別全名，例：一般生、輔導:輔導主任</param>
+            <param name="color">類別顏色。</param>
+            <param name="code">類別權限代碼，如果不指定代表是一般類別，無法進行權限設定。</param>
+            <param name="title">權限畫面的描述，例：可為學生指定「一般生」類別。</param>
+            <param name="path">權限畫面放置路徑，例：學生>系統類別</param>
+        </member>
+        <member name="T:Customization.Tagging.ObjectCache`1">
+            <summary>
+            還沒寫好...
+            </summary>
+        </member>
+        <member name="M:Customization.Tagging.ObjectCache`1.Get(System.String[])">
+            <summary>
+            取得 TagConfig 的 AccessControlCode。
+            </summary>
+            <param name="tagConfigIDs"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Customization.Tagging.Tagging_Extensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Customization.Tagging.Tagging_Extensions.Viewable(System.Collections.Generic.IEnumerable{K12.Data.TagConfigRecord})">
+            <summary>
+            取得具有檢視權限的清單。
+            </summary>
+            <param name="records"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Customization.Tagging.Tagging_Extensions.Editable(System.Collections.Generic.IEnumerable{K12.Data.TagConfigRecord})">
+            <summary>
+            取得具有編輯權限的清單。
+            </summary>
+            <param name="records"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Customization.Tagging.Tagging_Extensions.Viewable(System.Collections.Generic.IEnumerable{K12.Data.GeneralTagRecord})">
+            <summary>
+            取得具有檢視權限的清單。
+            </summary>
+            <param name="records"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Customization.Tagging.Tagging_Extensions.Editable(System.Collections.Generic.IEnumerable{K12.Data.GeneralTagRecord})">
+            <summary>
+            取得具有編輯權限的清單。
+            </summary>
+            <param name="records"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Customization.Tagging.Tagging_Extensions.Viewable(System.Collections.Generic.IEnumerable{K12.Data.StudentTagRecord})">
+            <summary>
+            取得具有檢視權限的清單。
+            </summary>
+            <param name="records"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Customization.Tagging.Tagging_Extensions.Viewable(System.Collections.Generic.IEnumerable{K12.Data.ClassTagRecord})">
+            <summary>
+            
+            </summary>
+            <param name="records"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Customization.Tagging.Tagging_Extensions.Viewable(System.Collections.Generic.IEnumerable{K12.Data.TeacherTagRecord})">
+            <summary>
+            取得具有檢視權限的清單。
+            </summary>
+            <param name="records"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Customization.Tagging.Tagging_Extensions.Viewable(System.Collections.Generic.IEnumerable{K12.Data.CourseTagRecord})">
+            <summary>
+            取得具有檢視權限的清單。
+            </summary>
+            <param name="records"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Customization.Tagging.Tagging_Extensions.Editable(System.Collections.Generic.IEnumerable{K12.Data.StudentTagRecord})">
+            <summary>
+            取得具有檢視權限的清單。
+            </summary>
+            <param name="records"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Customization.Tagging.Tagging_Extensions.Editable(System.Collections.Generic.IEnumerable{K12.Data.ClassTagRecord})">
+            <summary>
+            
+            </summary>
+            <param name="records"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Customization.Tagging.Tagging_Extensions.Editable(System.Collections.Generic.IEnumerable{K12.Data.TeacherTagRecord})">
+            <summary>
+            取得具有檢視權限的清單。
+            </summary>
+            <param name="records"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Customization.Tagging.Tagging_Extensions.Editable(System.Collections.Generic.IEnumerable{K12.Data.CourseTagRecord})">
+            <summary>
+            取得具有檢視權限的清單。
+            </summary>
+            <param name="records"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
