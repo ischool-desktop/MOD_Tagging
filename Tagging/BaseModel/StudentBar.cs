@@ -446,51 +446,54 @@ namespace Tagging.BaseModel
                 {
                     if ((StatusItem)button.Tag != GetStatusItem(studentRec.Status).Value)
                     {
-                        try
+                        if (MessageBox.Show("確認變更學生狀態為" + ((StatusItem)button.Tag).Text + "？", "ischool", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
-                            string log = "學生「" + studentRec.Name + "」狀態已";
-                            log += "由「" + studentRec.StatusStr + "」變更為「" + ((StatusItem)button.Tag).Text + "」";
-
-                            studentRec.Status = ((StatusItem)button.Tag).Status;
-
-                            // 檢查同狀態要身分證或學號相同時，無法變更
-                            List<string> checkIDNumber = new List<string>();
-                            List<string> checkSnum = new List<string>();
-
-                            foreach (StudentRecord studRec in K12.Data.Student.SelectAll())
+                            try
                             {
-                                if (studRec.Status == studentRec.Status)
+                                string log = "學生「" + studentRec.Name + "」狀態已";
+                                log += "由「" + studentRec.StatusStr + "」變更為「" + ((StatusItem)button.Tag).Text + "」";
+
+                                studentRec.Status = ((StatusItem)button.Tag).Status;
+
+                                // 檢查同狀態要身分證或學號相同時，無法變更
+                                List<string> checkIDNumber = new List<string>();
+                                List<string> checkSnum = new List<string>();
+
+                                foreach (StudentRecord studRec in K12.Data.Student.SelectAll())
                                 {
-                                    if (!string.IsNullOrEmpty(studRec.StudentNumber))
-                                        checkSnum.Add(studRec.StudentNumber.Trim());
-                                    if (!string.IsNullOrEmpty(studRec.IDNumber))
-                                        checkIDNumber.Add(studRec.IDNumber.Trim());
+                                    if (studRec.Status == studentRec.Status)
+                                    {
+                                        if (!string.IsNullOrEmpty(studRec.StudentNumber))
+                                            checkSnum.Add(studRec.StudentNumber.Trim());
+                                        if (!string.IsNullOrEmpty(studRec.IDNumber))
+                                            checkIDNumber.Add(studRec.IDNumber.Trim());
+                                    }
                                 }
-                            }
 
-                            if (checkSnum.Contains(studentRec.StudentNumber.Trim()))
+                                if (checkSnum.Contains(studentRec.StudentNumber.Trim()))
+                                {
+                                    MsgBox.Show("在" + studentRec.Status.ToString() + "狀態學號有重複無法變更.");
+                                    return;
+                                }
+
+                                if (checkIDNumber.Contains(studentRec.IDNumber.Trim()))
+                                {
+                                    MsgBox.Show("在" + studentRec.Status.ToString() + "狀態身分證號有重複無法變更.");
+                                    return;
+                                }
+
+                                K12.Data.Student.Update(studentRec);
+                                FISCA.LogAgent.ApplicationLog.Log("學生狀態", "變更", "student", studentRec.ID, log);
+                            }
+                            catch (ArgumentException)
                             {
-                                MsgBox.Show("在" + studentRec.Status.ToString() + "狀態學號有重複無法變更.");
+                                MessageBox.Show("目前無法移到刪除");
+                            }
+                            catch
+                            {
+                                MotherForm.SetStatusBarMessage("變更狀態失敗，可能發生原因為學號或身分證號在" + button.Text + "學生中已經存在，請檢查學生資料。");
                                 return;
                             }
-
-                            if (checkIDNumber.Contains(studentRec.IDNumber.Trim()))
-                            {
-                                MsgBox.Show("在" + studentRec.Status.ToString() + "狀態身分證號有重複無法變更.");
-                                return;
-                            }
-
-                            K12.Data.Student.Update(studentRec);
-                            FISCA.LogAgent.ApplicationLog.Log("學生狀態", "變更", "student", studentRec.ID, log);
-                        }
-                        catch (ArgumentException)
-                        {
-                            MessageBox.Show("目前無法移到刪除");
-                        }
-                        catch
-                        {
-                            MotherForm.SetStatusBarMessage("變更狀態失敗，可能發生原因為學號或身分證號在" + button.Text + "學生中已經存在，請檢查學生資料。");
-                            return;
                         }
                     }
                 }
