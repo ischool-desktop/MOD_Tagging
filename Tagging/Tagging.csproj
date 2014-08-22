@@ -221,6 +221,7 @@
       <DependentUpon>ImportTeacherV2.cs</DependentUpon>
     </Compile>
     <Compile Include="ImportExport\Import\TeacherTag\ImportTeacherTag.cs" />
+    <Compile Include="IStudentChangeStatusAPI.cs" />
     <Compile Include="Permissions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -349,6 +350,7 @@
     <Content Include="Library\FISCA.UDT.dll" />
     <Content Include="Library\FISCA.UDT.pdb" />
     <Content Include="Library\FISCA.UDT.xml" />
+    <Content Include="Library\FISCA.xml" />
     <Content Include="Library\IntelliSchool.DSA.ClientFramework.dll" />
     <Content Include="Library\IntelliSchool.DSA.ClientFramework.xml" />
     <Content Include="Library\K12.Data.dll" />

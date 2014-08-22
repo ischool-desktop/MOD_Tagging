@@ -26,8 +26,16 @@ namespace Tagging
             #region RibbonBar 學生
             new Tagging.BaseModel.StudentMenu(K12.Presentation.NLDPanels.Student.RibbonBarItems["指定"]);
 
-            //指定 DescriptionPane。
-            NLDPanels.Student.SetDescriptionPaneBulider(new Tagging.BaseModel.StudentBarBuilder());
+            IStudentChangeStatusAPI item = FISCA.InteractionService.DiscoverAPI<IStudentChangeStatusAPI>();
+            if (item != null)
+            {                
+                NLDPanels.Student.SetDescriptionPaneBulider(item.CreateBasicInfo());
+            }
+            else
+            {
+                //指定 DescriptionPane。
+                NLDPanels.Student.SetDescriptionPaneBulider(new Tagging.BaseModel.StudentBarBuilder());
+                }            
 
             //新增 View。
             NLDPanels.Student.AddView(new Tagging.BaseModel.StudentView());
