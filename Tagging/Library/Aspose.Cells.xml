@@ -1368,7 +1368,7 @@
             Border border = style.Borders[BorderType.TopBorder];
             border.LineStyle = CellBorderType.Medium;
             border.Color = Color.Red;
-            cell.Style = style;
+            cell.SetStyle(style);
             
             [Visual Basic]
             
@@ -1378,7 +1378,7 @@
             Dim border as Border = style.Borders(BorderType.TopBorder)
             border.LineStyle = CellBorderType.Medium
             border.Color = Color.Red
-            cell.Style = style
+            cell.SetStyle(style)
             </code>
       </example>
     </member>
@@ -9892,7 +9892,7 @@
             style.Font.Color = Color.Blue;
             for(int i = 0; i &lt; 100; i ++)
             {
-            	excel.Worksheets[0].Cells[0, i].Style = style;
+            	excel.Worksheets[0].Cells[0, i].SetStyle(style;
             }
             
             //Second method

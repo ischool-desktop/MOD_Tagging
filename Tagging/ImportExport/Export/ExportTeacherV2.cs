@@ -615,7 +615,7 @@ namespace Tagging
                         }
                     }
                 }
-                report.Save(path, FileFormatType.Excel2003);
+                report.Save(path, FileFormatType.Excel97To2003);
                 #endregion
                 FISCA.Presentation.MotherForm.SetStatusBarMessage(_Title + "完成。");
                 if (overLimit)

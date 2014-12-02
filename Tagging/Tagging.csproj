@@ -38,9 +38,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.Cells, Version=4.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ischool_Junior with FISCA\FiscaRuntime\modules\Campus\Aspose.Cells.dll</HintPath>
+    <Reference Include="Aspose.Cells_201402">
+      <HintPath>..\..\..\Desktop\ischool desktop\modules\Campus\Aspose.Cells_201402.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">

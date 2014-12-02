@@ -101,6 +101,7 @@
             this.contextMenuBar1.Name = "contextMenuBar1";
             this.contextMenuBar1.Size = new System.Drawing.Size(75, 27);
             this.contextMenuBar1.Stretch = true;
+            //this.contextMenuBar1.SetStyle(DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled);
             this.contextMenuBar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.contextMenuBar1.TabIndex = 2;
             this.contextMenuBar1.TabStop = false;
