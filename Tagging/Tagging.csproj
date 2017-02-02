@@ -39,7 +39,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Cells_201402">
-      <HintPath>..\..\..\Desktop\ischool desktop\modules\Campus\Aspose.Cells_201402.dll</HintPath>
+      <HintPath>Library\Aspose.Cells_201402.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Customization.Tagging">
+      <HintPath>Library\Customization.Tagging.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
@@ -365,13 +369,6 @@
     <Content Include="_TagForm\Resources\ctxTag.Image.png" />
     <Content Include="_TagForm\Resources\Indeterminate.png" />
     <Content Include="_TagForm\Resources\Unchecked.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Customization.Tagging\Customization.Tagging.csproj">
-      <Project>{026c1405-1ae8-4a8f-abac-394899edd2e0}</Project>
-      <Name>Customization.Tagging</Name>
-      <Private>False</Private>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
